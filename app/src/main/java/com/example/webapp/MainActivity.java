@@ -10,16 +10,18 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
-    WebView webView = findViewById(R.id.webView);
-    ProgressBar progressBar = findViewById(R.id.pog);
+    WebView webView;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        webView=findViewById(R.id.webView);
+        progressBar=findViewById(R.id.pog);
 
         webView.loadUrl("https://www.sumashtech.com/category/phone");
-        webView.setWebViewClient(new WebViewClient(){
+        webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 progressBar.setVisibility(View.VISIBLE);
@@ -33,13 +35,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void onBackPressed()
-    {
-        if(webView.canGoBack()){
-            webView.goBack();
-        }else {
-            super.onBackPressed();
+        public void onBackPressed()
+        {
+            if(webView.canGoBack()){
+                webView.goBack();
+            }else{
+                super.onBackPressed();
+            }
         }
-    }
 
 }

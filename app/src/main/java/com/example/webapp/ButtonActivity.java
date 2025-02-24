@@ -9,13 +9,13 @@ import android.view.View;
 
 public class ButtonActivity extends AppCompatActivity {
 
-    CardView cardView=findViewById(R.id.card);
+    CardView cardView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button);
 
-
+   cardView=findViewById(R.id.card);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
